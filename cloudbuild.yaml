@@ -7,6 +7,6 @@ steps:
     args: ['push', 'gcr.io/stackpointcloud-206317/quarkus-getting-started']
   # Deploy container image to Cloud Run
   - name: 'gcr.io/cloud-builders/gcloud'
-    args: ['beta', 'run', 'deploy', 'quarkus-getting-started', '--image', 'gcr.io/stackpointcloud-206317/quarkus-getting-started', '--region', 'europe-west1', '--platform', 'managed', '--allow-unauthenticated']
+    args: ['run', 'deploy', 'quarkus-getting-started', '--image', 'gcr.io/stackpointcloud-206317/quarkus-getting-started', '--region', 'europe-west1', '--platform', 'managed', '--allow-unauthenticated', '--set-env-vars', 'DISABLE_SIGNAL_HANDLERS=foobar']
 images:
   - gcr.io/stackpointcloud-206317/quarkus-getting-started
